@@ -5,11 +5,23 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { GithubProvider } from './context/context';
 import { Auth0Provider } from '@auth0/auth0-react';
+//dev-0q657pr1.eu.auth0.com
+//qCEH22EbN24WhBhRmjt6l4dfHX4uOijK
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Auth0Provider
+    domain='dev-0q657pr1.eu.auth0.com'
+    clientId='qCEH22EbN24WhBhRmjt6l4dfHX4uOijK'
+    redirectUrl={window.location.origin}
+    cacheLocation='localstorage'
+  >
+    <React.StrictMode>
+      <GithubProvider>
+        <App />
+      </GithubProvider>
+    </React.StrictMode>
+    ,
+  </Auth0Provider>,
   document.getElementById('root')
 );
 
