@@ -45,6 +45,7 @@ const GithubProvider = ({ children }) => {
         })
         .catch((err) => console.log(err));
     } else {
+      //toggle error
       toggleError(true, 'There is no user with that username.');
     }
     checkRequests();
